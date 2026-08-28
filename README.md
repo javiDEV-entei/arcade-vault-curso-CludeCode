@@ -14,4 +14,4 @@ https://github.com/Klerith/fernando-skills
 ```bash
 npx skills@latest add Klerith/fernando-skills
 ```
-## Hola mundo23224
+## Hola mundo
