@@ -11,14 +11,7 @@ Actualmente es un scaffold recién creado de Next.js — solo existen `app/layou
 `app/page.tsx` con el contenido por defecto de `create-next-app`. Toda la funcionalidad
 (juegos, autenticación, ranking, persistencia de puntos) está por construir.
 
-## Comandos
 
-```bash
-npm run dev      # servidor de desarrollo (next dev)
-npm run build    # build de producción
-npm run start    # sirve el build de producción
-npm run lint     # ESLint (eslint-config-next: core-web-vitals + typescript)
-```
 
 No hay framework de tests configurado todavía. `npx tsc --noEmit` para chequeo de tipos.
 
@@ -31,6 +24,10 @@ No hay framework de tests configurado todavía. `npx tsc --noEmit` para chequeo 
 - **Tailwind CSS v4** vía `@tailwindcss/postcss`. No hay `tailwind.config`; el tema se define
   en `app/globals.css` con `@theme inline` y `@import "tailwindcss"`.
 - **TypeScript** strict, alias de import `@/*` → raíz del proyecto.
+
+## Skills
+
+Usa siempre /frontend-desing para diseñar la interfaz de usuario
 
 ## Flujo de trabajo: Spec Driven Design
 
