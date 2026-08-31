@@ -1,6 +1,6 @@
 # SPEC 01 — MVP visual de Arcade Vault
 
-> **Estado:** Aprobado
+> **Estado:** implementado
 > **Depende de:** —
 > **Fecha:** 2026-08-30
 > **Objetivo:** Portar a Next.js 16 (App Router) las cinco pantallas de `references/templates/` como interfaz navegable y estática, sin implementar ningún juego ni persistencia.
@@ -120,30 +120,30 @@ Cada paso deja el proyecto compilando (`npx tsc --noEmit`) y navegable (`next de
 
 ## Sección 5 — Criterios de aceptación
 
-- [ ] `npx tsc --noEmit` termina sin errores.
-- [ ] `next build` termina sin errores.
-- [ ] `/` muestra el hero "ARCADE VAULT" y una tarjeta por cada uno de los 8 juegos de `GAMES`.
-- [ ] Escribir "caí" en el buscador de `/` deja visible solo la tarjeta "CAÍDA".
-- [ ] Pulsar el chip "PUZZLE" en `/` deja visible solo los juegos de categoría PUZZLE.
-- [ ] Una búsqueda sin resultados muestra el bloque "NO HAY RESULTADOS".
-- [ ] Hacer clic en una tarjeta navega a `/juegos/<id>` y la URL cambia.
-- [ ] `/juegos/bloque-buster` muestra título, descripción larga, tira de estadísticas y una tabla con 10 filas de puntuaciones.
-- [ ] `/juegos/id-inexistente` devuelve la página 404 de Next.
-- [ ] En `/juegos/<id>` el botón "JUGAR AHORA" navega a `/juegos/<id>/jugar`.
-- [ ] En `/juegos/<id>/jugar` la puntuación del HUD aumenta sola con el tiempo.
-- [ ] Pulsar "PAUSA" congela la puntuación; "REANUDAR" la reactiva.
-- [ ] Pulsar "FIN" abre el modal "FIN DEL JUEGO" con la puntuación final.
-- [ ] Pulsar "GUARDAR PUNTUACIÓN" en el modal muestra el toast "PUNTUACIÓN GUARDADA" y no persiste nada al recargar.
-- [ ] `/entrar` muestra la tarjeta con las pestañas "INICIAR SESIÓN" y "CREAR CUENTA" y alterna los campos al cambiar de pestaña.
-- [ ] Enviar el formulario de `/entrar` navega a `/` y la barra de navegación muestra el nombre del usuario.
-- [ ] Recargar el navegador tras iniciar sesión vuelve al estado sin sesión (botón "Iniciar Sesión" visible).
-- [ ] "JUGAR COMO INVITADO" en `/entrar` navega a `/`.
-- [ ] `/salon-de-la-fama` muestra un podio de 3 puestos y una tabla de 12 filas para el juego seleccionado.
-- [ ] Cambiar de pestaña de juego en `/salon-de-la-fama` cambia los datos del podio y la tabla.
-- [ ] La fila "TU MEJOR MARCA" en `/salon-de-la-fama` solo aparece si hay sesión iniciada.
-- [ ] La barra de navegación y el footer aparecen en las 5 rutas.
-- [ ] En viewport estrecho (<840px) la barra colapsa y el botón "≡" abre el panel lateral.
-- [ ] Ningún componente usa `localStorage`, `sessionStorage`, `fetch` ni cookies.
+- [x ] `npx tsc --noEmit` termina sin errores.
+- [ x] `next build` termina sin errores.
+- [ x] `/` muestra el hero "ARCADE VAULT" y una tarjeta por cada uno de los 8 juegos de `GAMES`.
+- [ x] Escribir "caí" en el buscador de `/` deja visible solo la tarjeta "CAÍDA".
+- [ x] Pulsar el chip "PUZZLE" en `/` deja visible solo los juegos de categoría PUZZLE.
+- [ x] Una búsqueda sin resultados muestra el bloque "NO HAY RESULTADOS".
+- [ x] Hacer clic en una tarjeta navega a `/juegos/<id>` y la URL cambia.
+- [x ] `/juegos/bloque-buster` muestra título, descripción larga, tira de estadísticas y una tabla con 10 filas de puntuaciones.
+- [ x] `/juegos/id-inexistente` devuelve la página 404 de Next.
+- [ x] En `/juegos/<id>` el botón "JUGAR AHORA" navega a `/juegos/<id>/jugar`.
+- [ x] En `/juegos/<id>/jugar` la puntuación del HUD aumenta sola con el tiempo.
+- [x ] Pulsar "PAUSA" congela la puntuación; "REANUDAR" la reactiva.
+- [x ] Pulsar "FIN" abre el modal "FIN DEL JUEGO" con la puntuación final.
+- [ x] Pulsar "GUARDAR PUNTUACIÓN" en el modal muestra el toast "PUNTUACIÓN GUARDADA" y no persiste nada al recargar.
+- [ x] `/entrar` muestra la tarjeta con las pestañas "INICIAR SESIÓN" y "CREAR CUENTA" y alterna los campos al cambiar de pestaña.
+- [ x] Enviar el formulario de `/entrar` navega a `/` y la barra de navegación muestra el nombre del usuario.
+- [ x] Recargar el navegador tras iniciar sesión vuelve al estado sin sesión (botón "Iniciar Sesión" visible).
+- [ x] "JUGAR COMO INVITADO" en `/entrar` navega a `/`.
+- [x ] `/salon-de-la-fama` muestra un podio de 3 puestos y una tabla de 12 filas para el juego seleccionado.
+- [x ] Cambiar de pestaña de juego en `/salon-de-la-fama` cambia los datos del podio y la tabla.
+- [ x] La fila "TU MEJOR MARCA" en `/salon-de-la-fama` solo aparece si hay sesión iniciada.
+- [ x] La barra de navegación y el footer aparecen en las 5 rutas.
+- [ x] En viewport estrecho (<840px) la barra colapsa y el botón "≡" abre el panel lateral.
+- [ x] Ningún componente usa `localStorage`, `sessionStorage`, `fetch` ni cookies.
 
 ## Sección 6 — Decisiones tomadas y descartadas
 
