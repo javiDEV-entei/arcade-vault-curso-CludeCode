@@ -1,6 +1,6 @@
 # SPEC 02 — Home / Landing page
 
-> **Estado:** aprobado
+> **Estado:** implementado
 > **Depende de:** SPEC 01
 > **Fecha:** 2026-09-01
 > **Objetivo:** Portar a Next.js 16 la landing page de `references/templates/home-about/` como nueva ruta `/`, moviendo el catálogo actual a `/games`, sin implementar About ni ninguna persistencia.
@@ -79,26 +79,26 @@ Cada paso deja el proyecto compilando (`npx tsc --noEmit`) y navegable (`next de
 
 ## Sección 5 — Criterios de aceptación
 
-- [ ] `npx tsc --noEmit` termina sin errores.
-- [ ] `next build` termina sin errores.
-- [ ] `/` muestra el hero con el eyebrow "▸ INSERTA UNA MONEDA" y el título "EL ARCADE / CLÁSICO ESTÁ / DE VUELTA".
-- [ ] `/` muestra la sección "¿POR QUÉ ARCADE VAULT?" con 4 feature-cards (JUEGOS CLÁSICOS, 100% GRATIS, LADDER BOARDS, SIEMPRE CRECIENDO).
-- [ ] `/` muestra un rail con exactamente 6 mini-cards, correspondientes a `GAMES.slice(0, 6)`.
-- [ ] Hacer clic en una mini-card del rail navega a `/juegos/<id>` del juego correspondiente.
-- [ ] El botón "▶ EXPLORAR JUEGOS" del hero y "INSERTAR MONEDA →" del CTA final navegan a `/games`.
-- [ ] El botón "✦ CREAR CUENTA" y "EMPEZAR GRATIS →" navegan a `/entrar`.
-- [ ] El botón "VER SALÓN →" de la tarjeta de top jugadores navega a `/salon-de-la-fama`.
-- [ ] `/` muestra la sección "ACTIVIDAD EN VIVO" con un ticker de 7 filas y una lista de 5 top jugadores.
-- [ ] `/` muestra la sección "PRECIOS" con la tarjeta "JUGADOR VAULT / $0" y 3 preguntas de FAQ.
-- [ ] Al hacer scroll, las secciones con clase `.reveal` reciben la clase `in` (aparecen con animación) y no vuelven a observarse.
-- [ ] `/games` renderiza el buscador y el grid con los 8 juegos de `GAMES`, **sin** el hero "ARCADE VAULT".
-- [ ] Escribir "caí" en el buscador de `/games` deja visible solo la tarjeta "CAÍDA" (comportamiento de SPEC 01 intacto).
-- [ ] `/juegos/bloque-buster` y `/juegos/bloque-buster/jugar` siguen funcionando en sus URLs actuales.
-- [ ] En el Nav, el enlace "Inicio" está activo en `/` y el enlace "Biblioteca" está activo en `/games` y en `/juegos/<id>`.
-- [ ] El logo del Nav navega a `/`.
-- [ ] El Nav no muestra ningún enlace "Acerca de".
-- [ ] En viewport estrecho (<840px) el panel lateral lista Inicio, Biblioteca, Salón de la Fama y el botón de sesión.
-- [ ] Ningún componente nuevo usa `localStorage`, `sessionStorage`, `fetch` ni cookies.
+- [ x] `npx tsc --noEmit` termina sin errores.
+- [ x] `next build` termina sin errores.
+- [ x] `/` muestra el hero con el eyebrow "▸ INSERTA UNA MONEDA" y el título "EL ARCADE / CLÁSICO ESTÁ / DE VUELTA".
+- [ x] `/` muestra la sección "¿POR QUÉ ARCADE VAULT?" con 4 feature-cards (JUEGOS CLÁSICOS, 100% GRATIS, LADDER BOARDS, SIEMPRE CRECIENDO).
+- [ x] `/` muestra un rail con exactamente 6 mini-cards, correspondientes a `GAMES.slice(0, 6)`.
+- [ x] Hacer clic en una mini-card del rail navega a `/juegos/<id>` del juego correspondiente.
+- [ x] El botón "▶ EXPLORAR JUEGOS" del hero y "INSERTAR MONEDA →" del CTA final navegan a `/games`.
+- [ x] El botón "✦ CREAR CUENTA" y "EMPEZAR GRATIS →" navegan a `/entrar`.
+- [ x] El botón "VER SALÓN →" de la tarjeta de top jugadores navega a `/salon-de-la-fama`.
+- [ x] `/` muestra la sección "ACTIVIDAD EN VIVO" con un ticker de 7 filas y una lista de 5 top jugadores.
+- [ x] `/` muestra la sección "PRECIOS" con la tarjeta "JUGADOR VAULT / $0" y 3 preguntas de FAQ.
+- [ x] Al hacer scroll, las secciones con clase `.reveal` reciben la clase `in` (aparecen con animación) y no vuelven a observarse.
+- [ x] `/games` renderiza el buscador y el grid con los 8 juegos de `GAMES`, **sin** el hero "ARCADE VAULT".
+- [ x] Escribir "caí" en el buscador de `/games` deja visible solo la tarjeta "CAÍDA" (comportamiento de SPEC 01 intacto).
+- [ x] `/juegos/bloque-buster` y `/juegos/bloque-buster/jugar` siguen funcionando en sus URLs actuales.
+- [ x] En el Nav, el enlace "Inicio" está activo en `/` y el enlace "Biblioteca" está activo en `/games` y en `/juegos/<id>`.
+- [ x] El logo del Nav navega a `/`.
+- [ x] El Nav no muestra ningún enlace "Acerca de".
+- [ x] En viewport estrecho (<840px) el panel lateral lista Inicio, Biblioteca, Salón de la Fama y el botón de sesión.
+- [ x] Ningún componente nuevo usa `localStorage`, `sessionStorage`, `fetch` ni cookies.
 
 ## Sección 6 — Decisiones tomadas y descartadas
 
