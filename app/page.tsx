@@ -1,17 +1,6 @@
-import { GAMES } from "@/app/lib/games";
-import { LibraryBrowser } from "@/app/components/LibraryBrowser";
+import { redirect } from "next/navigation";
 
 export default function Home() {
-  return (
-    <div className="fade-in">
-      <section className="av-hero">
-        <h1 className="flicker">ARCADE VAULT</h1>
-        <div className="sub">
-          INSERTA UNA MONEDA PARA JUGAR <span className="blink">_</span>
-        </div>
-      </section>
-
-      <LibraryBrowser games={GAMES} />
-    </div>
-  );
+  // Temporal: la landing page se implementa en el paso 4 de la SPEC 02.
+  redirect("/games");
 }

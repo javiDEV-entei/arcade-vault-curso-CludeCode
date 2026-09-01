@@ -15,12 +15,12 @@ export function AuthForm() {
   const submit = (e: FormEvent) => {
     e.preventDefault();
     signIn(user);
-    router.push("/");
+    router.push("/games");
   };
 
   const asGuest = () => {
     signInAsGuest();
-    router.push("/");
+    router.push("/games");
   };
 
   return (
