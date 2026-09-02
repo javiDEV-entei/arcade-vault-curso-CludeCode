@@ -108,7 +108,7 @@ export function ContactForm() {
           </button>
         </>
       ) : (
-        <div className="terminal-success">
+        <div className={"terminal-success" + (status === "error" ? " error-state" : "")}>
           <div className="term-bar">
             <span className="dot r"></span>
             <span className="dot y"></span>
