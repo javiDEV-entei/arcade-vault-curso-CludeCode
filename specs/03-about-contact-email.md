@@ -1,6 +1,6 @@
 # SPEC 03 — Acerca de + formulario de contacto (envío real con Resend)
 
-> **Estado:** aprobado
+> **Estado:** implementado
 > **Depende de:** SPEC 02
 > **Fecha:** 2026-09-02
 > **Objetivo:** Portar `about.jsx` a `/acerca-de` con el formulario de contacto enviando emails reales vía Resend a través de un Route Handler server-side.
@@ -95,19 +95,19 @@ Cada paso deja el proyecto compilando (`npx tsc --noEmit`) y navegable (`next de
 
 ## Sección 5 — Criterios de aceptación
 
-- [ ] `npx tsc --noEmit` termina sin errores.
-- [ ] `/acerca-de` muestra el kicker "▸ ACERCA DE", el título "ACERCA DE ARCADE VAULT" y el párrafo de misión.
-- [ ] `/acerca-de` muestra los 3 highlights (HECHO CON ❤️ PARA JUGADORES, JUEGOS EN HTML — CORREN EN CUALQUIER NAVEGADOR, PROYECTO EN CONSTANTE CRECIMIENTO) con sus iconos.
-- [ ] `/acerca-de` muestra el divisor animado con 24 píxeles y la sección de contacto con los 3 tips (RESPUESTA EN 24-48H, SUGERENCIAS BIENVENIDAS, SIN SPAM, JAMÁS).
-- [ ] Enviar el formulario con algún campo vacío aplica el efecto `shake` y no dispara ninguna petición de red.
-- [ ] Enviar el formulario con un email sin formato válido (ej. `"abc"`) aplica el efecto `shake` y no dispara ninguna petición de red.
-- [ ] Enviar el formulario con datos válidos deshabilita el botón y muestra "ENVIANDO…" mientras espera la respuesta del API.
-- [ ] Con `RESEND_API_KEY` y `CONTACT_TO_EMAIL` configurados correctamente en `.env.local`, enviar el formulario hace llegar un email real a `javieroliveradev0239@gmail.com` con el nombre, email y mensaje ingresados, y `reply_to` apuntando al email del remitente.
-- [ ] Tras un envío exitoso, se muestra el bloque `.terminal-success` con el nombre en mayúsculas en la línea final y un botón "ENVIAR OTRO MENSAJE" que resetea el formulario a vacío.
+- [ x] `npx tsc --noEmit` termina sin errores.
+- [x ] `/acerca-de` muestra el kicker "▸ ACERCA DE", el título "ACERCA DE ARCADE VAULT" y el párrafo de misión.
+- [x ] `/acerca-de` muestra los 3 highlights (HECHO CON ❤️ PARA JUGADORES, JUEGOS EN HTML — CORREN EN CUALQUIER NAVEGADOR, PROYECTO EN CONSTANTE CRECIMIENTO) con sus iconos.
+- [ x] `/acerca-de` muestra el divisor animado con 24 píxeles y la sección de contacto con los 3 tips (RESPUESTA EN 24-48H, SUGERENCIAS BIENVENIDAS, SIN SPAM, JAMÁS).
+- [ x] Enviar el formulario con algún campo vacío aplica el efecto `shake` y no dispara ninguna petición de red.
+- [ x] Enviar el formulario con un email sin formato válido (ej. `"abc"`) aplica el efecto `shake` y no dispara ninguna petición de red.
+- [ x] Enviar el formulario con datos válidos deshabilita el botón y muestra "ENVIANDO…" mientras espera la respuesta del API.
+- [ x] Con `RESEND_API_KEY` y `CONTACT_TO_EMAIL` configurados correctamente en `.env.local`, enviar el formulario hace llegar un email real a `javieroliveradev0239@gmail.com` con el nombre, email y mensaje ingresados, y `reply_to` apuntando al email del remitente.
+- [x ] Tras un envío exitoso, se muestra el bloque `.terminal-success` con el nombre en mayúsculas en la línea final y un botón "ENVIAR OTRO MENSAJE" que resetea el formulario a vacío.
 - [ ] Si el POST a `/api/contact` falla (ej. `RESEND_API_KEY` inválida), se muestra el bloque de error con un botón "REINTENTAR" que vuelve al formulario **sin perder** lo que el usuario había escrito.
-- [ ] `POST /api/contact` con `name`/`email`/`msg` vacíos o email con formato inválido responde `400` sin llamar a Resend.
-- [ ] El Nav muestra el enlace "Acerca de" → `/acerca-de`, activo solo en esa ruta, tanto en desktop como en el panel móvil.
-- [ ] `RESEND_API_KEY` no aparece en ningún archivo bajo `app/components/` ni en el bundle de cliente — solo se lee en `app/api/contact/route.ts`.
+- [x ] `POST /api/contact` con `name`/`email`/`msg` vacíos o email con formato inválido responde `400` sin llamar a Resend.
+- [ x] El Nav muestra el enlace "Acerca de" → `/acerca-de`, activo solo en esa ruta, tanto en desktop como en el panel móvil.
+- [ x] `RESEND_API_KEY` no aparece en ningún archivo bajo `app/components/` ni en el bundle de cliente — solo se lee en `app/api/contact/route.ts`.
 - [ ] `.env.local` no está comiteado (`.env*` sigue en `.gitignore`); existe `.env.example` comiteado con las claves vacías.
 
 ## Sección 6 — Decisiones tomadas y descartadas
