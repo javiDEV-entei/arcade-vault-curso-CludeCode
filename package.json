@@ -15,6 +15,7 @@
     "resend": "^6.25.0"
   },
   "devDependencies": {
+    "@eslint/markdown": "^8.0.3",
     "@tailwindcss/postcss": "^4",
     "@types/node": "^20",
     "@types/react": "^19",
