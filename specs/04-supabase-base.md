@@ -1,6 +1,6 @@
 # SPEC 04 — Integración base de Supabase
 
-> **Estado:** aprobado
+> **Estado:** implementado
 > **Depende de:** SPEC 01
 > **Fecha:** 2026-09-10
 > **Objetivo:** Dejar Supabase conectado al proyecto Next.js (SDK, variables de entorno, helpers de cliente browser/server y verificación de conexión), sin crear tablas ni tocar sesión, auth ni puntuaciones.
@@ -88,20 +88,20 @@ Cada paso deja el proyecto compilando (`npx tsc --noEmit`) y navegable (`next de
 
 ## Sección 5 — Criterios de aceptación
 
-- [ ] `npx tsc --noEmit` termina sin errores.
-- [ ] `package.json` lista `@supabase/supabase-js` y `@supabase/ssr` en `dependencies`.
-- [ ] `.env.template` contiene `NEXT_PUBLIC_SUPABASE_URL=` y `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=` (vacías) y conserva `SUPABASE_DB_PASSWORD=`.
-- [ ] `.env.local` existe con valores reales y **no** está comiteado (`git status` no lo muestra; `.env*` sigue en `.gitignore`).
-- [ ] `app/lib/supabase/client.ts` exporta `createClient()` y usa `createBrowserClient`.
-- [ ] `app/lib/supabase/server.ts` exporta `createClient()` async y usa `createServerClient` con `cookies()` de `next/headers`.
-- [ ] `app/lib/supabase/database.types.ts` existe y exporta el tipo `Database`.
-- [ ] Con `.env.local` correcto y el dev server corriendo, `GET /api/health/supabase` responde `200` con `{ "ok": true }`.
-- [ ] Sin `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `GET /api/health/supabase` responde `500` con `{ "ok": false, ... }` y no tira una excepción sin capturar.
-- [ ] El esquema `public` de Supabase sigue teniendo 0 tablas (`list_tables` vía MCP lo confirma).
-- [ ] `supabase/migrations/README.md` existe y describe el flujo archivo SQL + `apply_migration`.
-- [ ] Ningún archivo bajo `app/components/` importa desde `app/lib/supabase/server.ts`.
-- [ ] `get_advisors` (security) no reporta hallazgos nuevos atribuibles a esta spec.
-- [ ] `SessionProvider`, `AuthForm`, `PlayerShell`, `HallOfFame` y `seededScores` quedan sin cambios.
+- [x] `npx tsc --noEmit` termina sin errores.
+- [x] `package.json` lista `@supabase/supabase-js` y `@supabase/ssr` en `dependencies`.
+- [x] `.env.template` contiene `NEXT_PUBLIC_SUPABASE_URL=` y `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY=` (vacías) y conserva `SUPABASE_DB_PASSWORD=`.
+- [x] `.env.local` existe con valores reales y **no** está comiteado (`git status` no lo muestra; `.env*` sigue en `.gitignore`).
+- [x] `app/lib/supabase/client.ts` exporta `createClient()` y usa `createBrowserClient`.
+- [x] `app/lib/supabase/server.ts` exporta `createClient()` async y usa `createServerClient` con `cookies()` de `next/headers`.
+- [x] `app/lib/supabase/database.types.ts` existe y exporta el tipo `Database`.
+- [x] Con `.env.local` correcto y el dev server corriendo, `GET /api/health/supabase` responde `200` con `{ "ok": true }`.
+- [x] Sin `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY`, `GET /api/health/supabase` responde `500` con `{ "ok": false, ... }` y no tira una excepción sin capturar.
+- [x] El esquema `public` de Supabase sigue teniendo 0 tablas (`list_tables` vía MCP lo confirma).
+- [x] `supabase/migrations/README.md` existe y describe el flujo archivo SQL + `apply_migration`.
+- [x] Ningún archivo bajo `app/components/` importa desde `app/lib/supabase/server.ts`.
+- [x] `get_advisors` (security) no reporta hallazgos nuevos atribuibles a esta spec.
+- [x] `SessionProvider`, `AuthForm`, `PlayerShell`, `HallOfFame` y `seededScores` quedan sin cambios.
 
 ## Sección 6 — Decisiones tomadas y descartadas
 
