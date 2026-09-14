@@ -1,6 +1,6 @@
 # SPEC 05 — Primer juego jugable: Asteroides
 
-> **Estado:** aprobado
+> **Estado:** Implementado
 > **Depende de:** SPEC 01
 > **Fecha:** 2026-09-11
 > **Objetivo:** Portar el clon de Asteroids de `references/started-games/02-asteroids/` a un componente de juego real dentro de `/juegos/asteroides/jugar`, integrado con el HUD y el modal de fin de PlayerShell, sin tocar los otros 7 juegos del catálogo ni añadir persistencia real de puntuaciones.
@@ -96,21 +96,21 @@ Cada paso deja el proyecto compilando (`npx tsc --noEmit`) y navegable (`next de
 
 ## Sección 5 — Criterios de aceptación
 
-- [ ] `npx tsc --noEmit` termina sin errores.
-- [ ] `app/lib/games.ts` incluye una entrada con `id: "asteroides"` y `title: "ASTEROIDES"`; la entrada `rocas` sigue existiendo sin cambios.
-- [ ] `/games` muestra 9 tarjetas (las 8 originales más "ASTEROIDES").
-- [ ] `/juegos/asteroides` renderiza el detalle del juego (carátula, tags, descripción, leaderboard mock) igual que cualquier otro juego del catálogo.
-- [ ] En `/juegos/asteroides/jugar`, el juego se controla con `←`/`→` (rotar), `↑` (propulsar) y `Espacio` (disparar), sobre un `<canvas>` real con fondo negro y elementos en cian/magenta/amarillo.
-- [ ] El HUD de `PlayerShell` (Puntuación/Vidas/Nivel) refleja los valores reales del motor, actualizados en tiempo real; el canvas no dibuja su propio texto de HUD.
-- [ ] Los asteroides grandes se dividen en medianos y estos en pequeños al recibir un disparo; el nivel avanza al destruir todos los asteroides en pantalla.
-- [ ] El power-up de disparo triple aparece y, al recogerlo, la nave dispara 3 balas en abanico durante un tiempo limitado.
-- [ ] El botón "PAUSA" congela el juego real (la nave/asteroides dejan de moverse) y "REANUDAR" lo continúa sin saltos visibles.
-- [ ] Al perder la última vida, se abre automáticamente el modal de fin existente con la puntuación final correcta, sin ningún overlay adicional dibujado en el canvas.
-- [ ] El botón "FIN" abre el mismo modal manualmente y congela el juego detrás de él.
-- [ ] "GUARDAR PUNTUACIÓN" en el modal solo cambia el estado visual a "guardado" (sin llamada de red ni escritura en Supabase).
-- [ ] "JUGAR DE NUEVO" cierra el modal y arranca una partida nueva desde cero (nave centrada, puntuación 0, vidas 3, nivel 1).
-- [ ] Navegar a `/juegos/asteroides/jugar` y luego a otra ruta detiene el `requestAnimationFrame` y remueve los listeners de teclado (no quedan activos en segundo plano).
-- [ ] Cualquier otro juego del catálogo (p. ej. `/juegos/caida/jugar`) conserva exactamente el comportamiento fake actual (simulación de puntuación, arena de `div`s, HUD con `lives` fijo en 3) sin cambios.
+- [x] `npx tsc --noEmit` termina sin errores.
+- [x] `app/lib/games.ts` incluye una entrada con `id: "asteroides"` y `title: "ASTEROIDES"`; la entrada `rocas` sigue existiendo sin cambios.
+- [x] `/games` muestra 9 tarjetas (las 8 originales más "ASTEROIDES").
+- [x] `/juegos/asteroides` renderiza el detalle del juego (carátula, tags, descripción, leaderboard mock) igual que cualquier otro juego del catálogo.
+- [x] En `/juegos/asteroides/jugar`, el juego se controla con `←`/`→` (rotar), `↑` (propulsar) y `Espacio` (disparar), sobre un `<canvas>` real con fondo negro y elementos en cian/magenta/amarillo.
+- [x] El HUD de `PlayerShell` (Puntuación/Vidas/Nivel) refleja los valores reales del motor, actualizados en tiempo real; el canvas no dibuja su propio texto de HUD.
+- [x] Los asteroides grandes se dividen en medianos y estos en pequeños al recibir un disparo; el nivel avanza al destruir todos los asteroides en pantalla.
+- [x] El power-up de disparo triple aparece y, al recogerlo, la nave dispara 3 balas en abanico durante un tiempo limitado.
+- [x] El botón "PAUSA" congela el juego real (la nave/asteroides dejan de moverse) y "REANUDAR" lo continúa sin saltos visibles.
+- [x] Al perder la última vida, se abre automáticamente el modal de fin existente con la puntuación final correcta, sin ningún overlay adicional dibujado en el canvas.
+- [x] El botón "FIN" abre el mismo modal manualmente y congela el juego detrás de él.
+- [x] "GUARDAR PUNTUACIÓN" en el modal solo cambia el estado visual a "guardado" (sin llamada de red ni escritura en Supabase).
+- [x] "JUGAR DE NUEVO" cierra el modal y arranca una partida nueva desde cero (nave centrada, puntuación 0, vidas 3, nivel 1).
+- [x] Navegar a `/juegos/asteroides/jugar` y luego a otra ruta detiene el `requestAnimationFrame` y remueve los listeners de teclado (no quedan activos en segundo plano).
+- [x] Cualquier otro juego del catálogo (p. ej. `/juegos/caida/jugar`) conserva exactamente el comportamiento fake actual (simulación de puntuación, arena de `div`s, HUD con `lives` fijo en 3) sin cambios.
 
 ## Sección 6 — Decisiones tomadas y descartadas
 
